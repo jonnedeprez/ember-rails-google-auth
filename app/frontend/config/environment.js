@@ -37,16 +37,31 @@ module.exports = function(environment) {
       timeFactor: 1000, // convert seconds from backend to milliseconds for simple-auth
       refreshLeeway: 60 * 10 // refresh the token 10 minutes before its expiry
     },
-
     torii: {
       providers: {
         'google-oauth2-bearer': {
-          apiKey: 'REPLACE_WITH_YOUR_GOOGLE_CLIENT_ID',
+          apiKey: '848311915086-dmobsuq947nje8amkbr2h71pqdde82f6.apps.googleusercontent.com',
           scope: 'email profile',
           redirectUri: 'http://localhost:4200'
+        },
+        'facebook-connect': {
+          appId: '860378860724453',
+          scope: 'email,public_profile',
+          redirectUri: 'http://www.dwilio.com'
         }
       }
+    },
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'frame-src': "s-static.ak.facebook.com static.ak.facebook.com www.facebook.com",
+      'script-src': "'self' 'unsafe-eval' connect.facebook.net",
+      'font-src': "'self'",
+      'connect-src': "'self'",
+      'img-src': "'self'",
+      'style-src': "'self'",
+      'media-src': "'self'"
     }
+
   };
 
   if (environment === 'development') {

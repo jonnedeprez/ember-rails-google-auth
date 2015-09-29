@@ -21,6 +21,7 @@ gem 'active_model_serializers', '~> 0.9.2'
 gem 'responders'
 
 gem 'google-api-client', '0.9.pre3'
+gem 'koala', '~> 2.2'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

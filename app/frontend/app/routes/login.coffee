@@ -14,4 +14,16 @@ LoginRoute = Ember.Route.extend
         ), (error)-> Ember.debug(JSON.stringify(error))
       )
 
+    facebookLogin: ->
+      self = @
+      @get('torii').open('facebook-connect').then(
+        ((auth) ->
+          Ember.debug(JSON.stringify(auth))
+          self.get('session').authenticate('simple-auth-authenticator:jwt',
+            password: auth.accessToken
+            provider: 'facebook'
+          )
+        ), (error)-> Ember.debug(JSON.stringify(error))
+      )
+
 `export default LoginRoute`

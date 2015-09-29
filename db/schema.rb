@@ -14,8 +14,8 @@
 ActiveRecord::Schema.define(version: 20150925113146) do
 
   create_table "users", force: :cascade do |t|
-    t.string "email",    default: "", null: false
-    t.string "name"
+    t.string "email"
+    t.string "name",     null: false
     t.string "provider"
     t.string "uid"
   end
