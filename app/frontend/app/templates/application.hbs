@@ -1,0 +1,15 @@
+<h2 id="title">Welcome to Ember.js</h2>
+
+
+<div>{{#if session.isAuthenticated}}
+  <button {{ action 'invalidateSession' }}>Logout</button>
+{{else}}
+  <button {{ action 'sessionRequiresAuthentication' }}>Login</button>
+{{/if}}
+</div>
+
+<div>{{#link-to 'auth.users'}}Users{{/link-to}}</div>
+
+<div>
+  {{outlet}}
+</div>
