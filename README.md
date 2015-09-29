@@ -1,6 +1,6 @@
 # README
 
-This project demonstrates how you setup Google authentication in Rails + Ember project, using JSON Web Tokens for authorization. 
+This project demonstrates how you setup Google authentication in a Rails + Ember project, using JSON Web Tokens for authorization. 
 
 ## Setup
 
